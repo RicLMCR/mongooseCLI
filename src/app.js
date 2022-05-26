@@ -40,8 +40,8 @@ const app = async (yargsObj) => {
 
 app(yargs.argv);
 
-// COMMANDS
-// Add movie: node src/app.js --addM --title "Star Wars"
-// List movies: node src/app.js --listM
-// Delete Movie: node src/app.js --deleteM --title "Star Wars"
-// Update movie: node src/app.js --updateM --title "Spiderman" --newTitle "Batman"
+// COMMANDS - MOVIE
+// Add movie: node src/app.js --add --title "Star Wars"
+// List movies: node src/app.js --list
+// Delete Movie: node src/app.js --delete --title "Star Wars"
+// Update movie: node src/app.js --update --title "Spiderman" --newTitle "Batman"
