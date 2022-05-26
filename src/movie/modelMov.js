@@ -1,5 +1,4 @@
 // Database schema/structure to determine what data types and objects can be included
-
 const mongoose = require ("mongoose");
 
 const movieSchema = new mongoose.Schema({ //Define key value pairs

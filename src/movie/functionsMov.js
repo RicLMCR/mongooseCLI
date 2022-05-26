@@ -1,8 +1,8 @@
-// Effect the mpvie part of my database
-const {
-    findOne
-} = require("./model");
-const Movie = require("./model");
+// Affect the movie part of my database
+// const {
+//     findOne
+// } = require("./modelMov");
+const Movie = require("./modelMov");
 
 // Add movie function
 exports.addMovie = async (movieObj) => { // async as this is outside of appliocation so we have to await it
@@ -17,7 +17,6 @@ exports.addMovie = async (movieObj) => { // async as this is outside of applioca
 // List movie function
 exports.listMovie = async () => {
     try {
-
         const response = await Movie.find();
         console.log(response)
     } catch {
@@ -39,9 +38,9 @@ exports.updMovie = async (movieObj) => {
                 new: true
             } // Returns update in the command line - not original
         );
-        console.log(response);
+        console.log(response.modifiedCount > 0);
     } catch (error) {
-        console.log(`2 ${error}`)
+        console.log(error)
     }
 }
 
@@ -49,7 +48,7 @@ exports.updMovie = async (movieObj) => {
 exports.delMovie = async (movieObj) => {
     try {
         const response = await Movie.deleteOne(movieObj);
-        console.log(response);
+        console.log(response.deletedCount > 0);
     } catch (error) {
         console.log(error)
     }
