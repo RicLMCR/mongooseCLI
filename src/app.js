@@ -13,7 +13,7 @@ const {
     delTV,
     updTV,
     listTV
-} = require("./TV/functionsTV");
+} = require("./TV/functionsTV"); // Connects functions from 'functionsTV'
 
 
 // Add Movie or TV show
