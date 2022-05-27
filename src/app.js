@@ -19,7 +19,7 @@ const {
 // Movie commands
 const app = async (yargsObj) => {
             //add movie ot TV show to db from yargs input
-    if (yargsObj.add) {
+    if (yargsObj.addM) {
         await addMovie({
             title: yargsObj.title,
             actor: yargsObj.actor
@@ -33,14 +33,14 @@ const app = async (yargsObj) => {
     }
     
     // Find movies or TV list
-    else if (yargsObj.list) {
+    else if (yargsObj.listM) {
         await listMovie();
     } else if(yargsObj.listTV){
         await listTV();
     }
 
     // Update a movie        
-    else if (yargsObj.update) {
+    else if (yargsObj.updateM) {
         await updMovie({
             title: yargsObj.title,
             newTitle: yargsObj.newTitle
@@ -53,7 +53,7 @@ const app = async (yargsObj) => {
     }
     
     // Delete a movie or TV show
-    else if (yargsObj.delete) {
+    else if (yargsObj.deleteM) {
         await delMovie({
             title: yargsObj.title
         });
@@ -70,17 +70,13 @@ const app = async (yargsObj) => {
     await mongoose.disconnect();
 }
 
-// TV commands
-
-
-
 app(yargs.argv);
 
 // COMMANDS - MOVIE
-// Add movie: node src/app.js --add --title "Star Wars"
-// List movies: node src/app.js --list
-// Delete Movie: node src/app.js --delete --title "Star Wars"
-// Update movie: node src/app.js --update --title "Spiderman" --newTitle "Batman"
+// Add movie: node src/app.js --addM --title "Star Wars"
+// List movies: node src/app.js --listM
+// Delete Movie: node src/app.js --deleteM --title "Star Wars"
+// Update movie: node src/app.js --updateM --title "Spiderman" --newTitle "Batman"
 
 // COMMANDS - TV
 // Add TV show: node src/app.js --addTV --title "Obi Wan"
