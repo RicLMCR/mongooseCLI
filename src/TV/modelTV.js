@@ -10,6 +10,7 @@ const tvSchema = new mongoose.Schema({
     },
     Actor: {
         type: String,
+        default: "Not specified"
 
     },
     Seasons: {
@@ -21,6 +22,6 @@ const tvSchema = new mongoose.Schema({
     },
 })
 
-const tvShow = mongoose.model("tvShow", tvSchema);
+const TVshow = mongoose.model("TVshow", tvSchema);
 
-module.exports = tvShow;
+module.exports = TVshow;

@@ -6,16 +6,16 @@ const {
     delMovie,
     updMovie,
     listMovie
-} = require("./movie/functionsMov");
-
+} = require("./movie/functionsMov"); // Connects functions from 'functionsMov'
 
 const app = async (yargsObj) => {
     if (yargsObj.add) {
+        // if (yargsObj.add contains TV){TV push} else if (yargsObj.add contains MV) {Movie push} else {incorrect entry}
         //add movie to db from yargs input
         await addMovie({
             title: yargsObj.title,
             actor: yargsObj.actor
-        }); // Calls addmvie function 
+        });
     } else if (yargsObj.list) {
 
         // Find movies list
