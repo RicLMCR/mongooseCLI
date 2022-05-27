@@ -16,9 +16,8 @@ const {
 } = require("./TV/functionsTV");
 
 
-// Movie commands
+// Add Movie or TV show
 const app = async (yargsObj) => {
-            //add movie ot TV show to db from yargs input
     if (yargsObj.addM) {
         await addMovie({
             title: yargsObj.title,
@@ -32,14 +31,14 @@ const app = async (yargsObj) => {
         });
     }
     
-    // Find movies or TV list
+// Find movies or TV list
     else if (yargsObj.listM) {
         await listMovie();
     } else if(yargsObj.listTV){
         await listTV();
     }
 
-    // Update a movie        
+// Update a movie or TV show  
     else if (yargsObj.updateM) {
         await updMovie({
             title: yargsObj.title,
@@ -52,7 +51,7 @@ const app = async (yargsObj) => {
         });
     }
     
-    // Delete a movie or TV show
+// Delete a movie or TV show
     else if (yargsObj.deleteM) {
         await delMovie({
             title: yargsObj.title
@@ -63,7 +62,7 @@ const app = async (yargsObj) => {
         });
     }
     
-    // Catch entry error
+// Catch entry error
     else {
         console.log("Incorrect command")
     }
