@@ -8,12 +8,12 @@ const tvSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
-    Actor: {
+    actor: {
         type: String,
         default: "Not specified"
 
     },
-    Seasons: {
+    season: {
         type: Number,
         validate: {
             validator : Number.isInteger,

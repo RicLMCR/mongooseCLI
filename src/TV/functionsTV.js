@@ -39,3 +39,11 @@ exports.updTV = async (tvObj) => {
 }
 
 // Delete TV show function
+exports.delTV = async (tvObj)=>{
+    try {
+        const response = await TVshow.deleteOne(tvObj);
+        console.log(response);
+    } catch (error){
+        console.log(error);
+    }
+}
